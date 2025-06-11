@@ -1,0 +1,362 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: #2c3e50;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* Resume Container */
+.resume-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    min-height: 297mm; /* A4 height */
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 30%;
+    background-color: #2c3e50;
+    color: white;
+    padding: 30px;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contact-info,
+.skills-section,
+.languages-section {
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.contact-info h2,
+.skills-section h2,
+.languages-section h2 {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+    color: white;
+}
+
+.contact-info ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info ul li i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+    color: #3498db;
+}
+
+.skill-item {
+    margin-bottom: 10px;
+}
+
+.skill-item span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.skill-level {
+    width: 100%;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.skill-progress {
+    height: 100%;
+    background-color: #3498db;
+    border-radius: 4px;
+}
+
+.languages-section ul li {
+    margin-bottom: 5px;
+}
+
+/* Main Content Styles */
+.main-content {
+    width: 70%;
+    padding: 30px;
+}
+
+.header {
+    margin-bottom: 30px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+.header h2 {
+    font-size: 1.3rem;
+    color: #7f8c8d;
+    font-weight: normal;
+}
+
+.section {
+    margin-bottom: 25px;
+}
+
+.section h2 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: #3498db;
+}
+
+.experience-item,
+.education-item {
+    margin-bottom: 20px;
+}
+
+.job-title-line,
+.edu-title-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.job-title-line h3,
+.edu-title-line h3 {
+    font-size: 1.2rem;
+}
+
+.job-date,
+.edu-date {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+.experience-item h4,
+.education-item h4 {
+    margin-bottom: 10px;
+    color: #7f8c8d;
+}
+
+.experience-item ul li {
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.experience-item ul li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #3498db;
+}
+
+.certification-list li {
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.certification-list li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #3498db;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .resume-container {
+        flex-direction: column;
+    }
+
+    .sidebar,
+    .main-content {
+        width: 100%;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* Print Styles - Simplified black and white with vertical separator */
+@media print {
+    /* Basic page setup */
+    @page {
+        size: A4 portrait;
+        margin: 0.5cm;
+    }
+
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: white;
+        color: black;
+    }
+
+    .resume-container {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        background-color: white;
+    }
+
+    /* Remove all background colors */
+    .sidebar,
+    .main-content,
+    .skill-level,
+    .skill-progress {
+        background-color: white !important;
+    }
+
+    /* Create vertical separator line instead of background color */
+    .resume-container:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 30%; /* Match the width of sidebar */
+        height: 100%;
+        width: 1px;
+        background-color: black;
+    }
+
+    /* Update sidebar for print */
+    .sidebar {
+        width: 30%;
+        color: black !important;
+        padding: 30px 30px 30px 0;
+    }
+
+    /* Make all text black */
+    .sidebar h2,
+    .contact-info h2,
+    .skills-section h2,
+    .languages-section h2,
+    .section h2,
+    .header h1,
+    .header h2,
+    .job-title-line h3,
+    .edu-title-line h3,
+    .experience-item h4,
+    .education-item h4,
+    .job-date,
+    .edu-date,
+    .contact-info ul li i,
+    .experience-item ul li:before,
+    .certification-list li:before {
+        color: black !important;
+        border-color: black !important;
+    }
+
+    /* Modify skill bars for print */
+    .skill-level {
+        border: 1px solid black;
+        height: 8px;
+        border-radius: 0;
+    }
+
+    .skill-progress {
+        background-color: white !important;
+        border-right: 1px solid white;
+        position: relative;
+    }
+
+    /* Add black dots to show skill level instead of colored bars */
+    .skill-progress:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 5px;
+        height: 5px;
+        background-color: black;
+        border-radius: 50%;
+    }
+
+    /* Change borders to black */
+    .header {
+        border-bottom: 1px solid black;
+    }
+
+    .contact-info h2,
+    .skills-section h2,
+    .languages-section h2 {
+        border-bottom: 1px solid black;
+    }
+
+    /* Update profile image for print */
+    .profile-image {
+        border: 1px solid black !important;
+    }
+
+    /* Preserve the layout */
+    .main-content {
+        width: 70%;
+        padding: 30px 0 30px 30px;
+    }
+
+    /* Use simple bullets for lists */
+    .experience-item ul li:before,
+    .certification-list li:before {
+        content: "•";
+    }
+
+    /* Fix for flexbox items */
+    .profile-container,
+    .job-title-line,
+    .edu-title-line {
+        display: flex !important;
+    }
+}
